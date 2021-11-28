@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <title>Audiophile e-commerce website</title>
+  </head>
+  <body>
+    <header id="site-header">
+      <!-- For the main header -->
+      <div id="header-main" class="site-section subpage">
+        <div class="inner-wrapper">
+          <!-- For the mobile menu -->
+          <div id="mobile-menu-trigger">
+            <button class="custom-site-btn" title="Mobile Menu" aria-label="Mobile Menu">
+              <i class="custom-icon menu-icon">&#xf0c9;</i>
+              <i class="custom-icon close">&#xe806;</i>
+            </button>
+          </div>
+
+          <!-- Column 1 -->
+          <div class="col col-1">
+            <a class="custom-logo-link" href="/">
+              <img class="custom-logo" src="./assets/shared/desktop/logo.svg" alt="Audiophile E-commerce" />
+            </a>
+          </div>
+
+          <!-- Column 2 -->
+          <div class="col col-2">
+            <div class="menu-cart-wrapper">
+              <!-- For the menu content -->
+              <div class="menu-content">
+                <nav class="primary-nav">
+                  <ul id="main-menu" class="main-menu navigation-menu">
+                    <li class="menu-item">
+                      <a href="/">Home</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="./headphones.html">Headphones</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="./speakers.html">Speakers</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="./earphones.html">Earphones</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+
+              <!-- For the cart icon -->
+              <div class="cart-wrapper">
+                <a class="cart-link" href="./cart.html">
+                  <i class="custom-icon cart" alt="Shopping Cart">&#xe800;</i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- For the mobile menu -->
+        <div id="mobile-menu">
+          <div class="navigation-wrapper">
+            <!-- Mobile main menu  -->
+            <nav class="mobile-primary-nav" aria-label="Mobile Main Menu">
+              <ul id="mobile-main-menu" class="mobile-main-menu navigation-menu">
+                <li class="mobile-menu-item">
+                  <a href="/">Home</a>
+                </li>
+                <li class="mobile-menu-item">
+                  <a href="./headphones.html">Headphones</a>
+                </li>
+                <li class="mobile-menu-item">
+                  <a href="./speakers.html">Speakers</a>
+                </li>
+                <li class="mobile-menu-item">
+                  <a href="./earphones.html">Earphones</a>
+                </li>
+              </ul>
+            </nav>
+
+            <!-- For the social icons -->
+            <ul class="social-section">
+              <li class="social">
+                <a class="social-item cta-with-icon facebook" href="https://www.facebook.com/" target="_blank" aria-label="visit our facebook">
+                  <span class="screen-reader-text">facebook</span>
+                </a>
+              </li>
+              <li class="social">
+                <a class="social-item cta-with-icon instagram" href="https://www.instagram.com/" target="_blank" aria-label="visit our instagram">
+                  <span class="screen-reader-text">instagram</span>
+                </a>
+              </li>
+              <li class="social">
+                <a class="social-item cta-with-icon twitter" href="https://www.twitter.com/" target="_blank" aria-label="visit our twitter">
+                  <span class="screen-reader-text">twitter</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Wrapping main body contents -> for the 'skip to target' -->
+    <div class="main-content">
+      <!-- For the main  -->
+      <main>
+        <!-- For the product -->
+        <section id="product-info-section" class="site-section">
+          <div class="inner-wrapper">
+            <!-- For the back button  -->
+            <a href="./speakers.html" class="back-btn">
+              <i class="custom-icon arrow-left">&#xe803;</i>
+              <sapn>Go Back</sapn>
+            </a>
+
+            <!-- Product 1 -->
+            <div class="product-wrapper">
+              <!-- Column 1 -->
+              <div class="col col-1">
+                <div class="featured-image" style="background-image: url(./assets/product-zx7-speaker/desktop/image-product.jpg)"></div>
+              </div>
+
+              <!-- Column 2 -->
+              <div class="col col-2">
+                <!-- For the content + button -->
+                <div class="content-wrapper">
+                  <div class="text-wrapper">
+                    <span class="overline-text">New product</span>
+                    <h2>ZX7 SPEAKER</h2>
+                    <p>
+                      Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or
+                      studio use.
+                    </p>
+                    <span class="price">$ 3,500</span>
+                  </div>
+
+                  <div class="button-wrapper">
+                    <!-- For the quantity field  -->
+                    <div class="qty-fields-wrappeer">
+                      <button class="custom-site-btn qty-decrease"><i class="custom-icon minus">&#xe807;</i></button>
+                      <input class="qty-input" type="number" name="quantity" value="1" />
+                      <button class="custom-site-btn qty-increase"><i class="custom-icon plus">&#xe806;</i></button>
+                    </div>
+                    <!-- For the cta -->
+                    <button id="add-product-btn" type="button" data-product-id="4">Add to cart</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- For the product features section -->
+        <section id="product-features-section" class="site-section">
+          <div class="inner-wrapper">
+            <div class="col col-1">
+              <div class="col-inner">
+                <h2 class="panel-heading">FEATURES</h2>
+                <p class="desc">
+                  Reap the advantages of a flat diaphragm tweeter cone. This provides a fast response rate and excellent high frequencies that lower tiered bookshelf speakers cannot provide. The
+                  woofers are made from aluminum that produces a unique and clear sound. XLR inputs allow you to connect to a mixer for more advanced usage.
+                </p>
+                <p class="desc">
+                  The ZX7 speaker is the perfect blend of stylish design and high performance. It houses an encased MDF wooden enclosure which minimises acoustic resonance. Dual connectivity allows
+                  pairing through bluetooth or traditional optical and RCA input. Switch input sources and control volume at your finger tips with the included wireless remote. This versatile speaker
+                  is equipped to deliver an authentic listening experience.
+                </p>
+              </div>
+            </div>
+            <div class="col col-2">
+              <div class="col-inner">
+                <h2 class="panel-heading">in the box</h2>
+                <ul class="contents-list">
+                  <li><span>2x</span>Speaker Unit</li>
+                  <li><span>2x</span>Speaker Cloth Panel</li>
+                  <li><span>1x</span>User Manual</li>
+                  <li><span>1x</span>3.5mm 5m Audio Cable</li>
+                  <li><span>1x</span>7.5m Optical Cable</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- For the featured image gallery section -->
+        <section id="product-gallery-section" class="site-section">
+          <div class="inner-wrapper">
+            <!-- Column 1  -->
+            <div class="col col-1">
+              <div class="col-inner">
+                <div class="featured-image" style="background-image: url(./assets/product-zx7-speaker/desktop/image-gallery-1.jpg)"></div>
+                <div class="featured-image" style="background-image: url(./assets/product-zx7-speaker/desktop/image-gallery-2.jpg)"></div>
+              </div>
+            </div>
+
+            <!-- Column 2  -->
+            <div class="col col-2">
+              <div class="featured-image" style="background-image: url(./assets/product-zx7-speaker/desktop/image-gallery-3.jpg)"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- For the You may also like panel -->
+        <section id="suggest-panel" class="site-section">
+          <div class="inner-wrapper">
+            <h2 class="panel-heading">You may also like</h2>
+            <div class="suggest-products-wrapper">
+              <!-- Suggested product 1  -->
+              <div class="suggest-product">
+                <div class="col col-1">
+                  <div class="featured-image" style="background-image: url(./assets/product-zx7-speaker/desktop/image-category-page-preview.jpg)"></div>
+                </div>
+                <div class="col col-2">
+                  <div class="text-wrapper">
+                    <h3 class="product-name">ZX7 SPEAKER</h3>
+                    <!-- For the cta -->
+                    <a class="cta-button" href="./product-zx9-speaker.html">See product</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Suggested product 2  -->
+              <div class="suggest-product">
+                <div class="col col-1">
+                  <div class="featured-image" style="background-image: url(./assets/product-zx9-speaker/desktop/image-category-page-preview.jpg)"></div>
+                </div>
+                <div class="col col-2">
+                  <div class="text-wrapper">
+                    <h3 class="product-name">ZX9 SPEAKER</h3>
+                    <!-- For the cta -->
+                    <a class="cta-button" href="./product-zx9-speaker.html">See product</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Suggested product 3  -->
+              <div class="suggest-product">
+                <div class="col col-1">
+                  <div class="featured-image" style="background-image: url(./assets/product-xx59-headphones/desktop/image-category-page-preview.jpg)"></div>
+                </div>
+                <div class="col col-2">
+                  <div class="text-wrapper">
+                    <h3 class="product-name">XX59</h3>
+                    <!-- For the cta -->
+                    <a class="cta-button" href="./product-xx59-headphones.html">See product</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- For the category list panel -->
+        <section id="category-panel" class="site-section">
+          <div class="inner-wrapper">
+            <div class="cat-items-wrapper">
+              <!-- Category 1 -->
+              <a class="cat-item" href="./headphones.html">
+                <div class="featured-image" style="background-image: url(./assets/shared/desktop/image-category-thumbnail-headphones.png)"></div>
+                <div class="text-wrapper">
+                  <span class="cat-name">Headphones</span>
+                  <div class="arrow-link">
+                    <span class="link-text">Shop</span>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Category 2 -->
+              <a class="cat-item" href="./speakers.html">
+                <div class="featured-image" style="background-image: url(./assets/shared/desktop/image-category-thumbnail-speakers.png)"></div>
+                <div class="text-wrapper">
+                  <span class="cat-name">Speakers</span>
+                  <div class="arrow-link">
+                    <span class="link-text">Shop</span>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Category 3 -->
+              <a class="cat-item" href="./earphones.html">
+                <div class="featured-image" style="background-image: url(./assets/shared/desktop/image-category-thumbnail-earphones.png)"></div>
+                <div class="text-wrapper">
+                  <span class="cat-name">Earphones</span>
+                  <div class="arrow-link">
+                    <span class="link-text">Shop</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- For the about section -->
+        <section id="about-panel" class="site-section">
+          <div class="inner-wrapper">
+            <!-- Column 1 -->
+            <div class="col col-1">
+              <div class="text-wrapper">
+                <h2 class="panel-heading">Bringing you the <span class="text-decoration">best</span> audio gear</h2>
+                <p class="about-dec">
+                  Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury
+                  demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place
+                  to buy your portable audio equipment.
+                </p>
+              </div>
+            </div>
+            <!-- Column 2 -->
+            <div class="col col-2">
+              <div class="featured-image" style="background-image: url(./assets/shared/desktop/image-best-gear.jpg)"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- For the footer -->
+      <footer id="site-footer">
+        <div class="footer-main">
+          <!-- For the top footer -->
+          <section id="footer-top" class="site-section">
+            <div class="inner-wrapper">
+              <!-- Column 1 -->
+              <div class="col col-1">
+                <div class="logo-about-wrapper">
+                  <a class="custom-logo-link" href="/">
+                    <img class="custom-logo" src="./assets/shared/desktop/logo.svg" alt="Audiophile E-commerce" />
+                  </a>
+                  <p class="about-desc">
+                    Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal
+                    audio. Come and visit our demo facility - we’re open 7 days a week.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Column 2 -->
+              <div class="col col-2">
+                <div class="col-inner">
+                  <!-- For the footer menu -->
+                  <nav class="footer-nav">
+                    <ul id="footer-menu" class="footer-menu navigation-menu">
+                      <li class="menu-item">
+                        <a href="/">Home</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="./headphones.html">Headphones</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="./speakers.html">Speakers</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="./earphones.html">Earphones</a>
+                      </li>
+                    </ul>
+                  </nav>
+
+                  <!-- For the social icons -->
+                  <ul class="social-section">
+                    <li class="social">
+                      <a class="social-item cta-with-icon facebook" href="https://www.facebook.com/" target="_blank" aria-label="visit our facebook">
+                        <span class="screen-reader-text">facebook</span>
+                      </a>
+                    </li>
+                    <li class="social">
+                      <a class="social-item cta-with-icon instagram" href="https://www.instagram.com/" target="_blank" aria-label="visit our instagram">
+                        <span class="screen-reader-text">instagram</span>
+                      </a>
+                    </li>
+                    <li class="social">
+                      <a class="social-item cta-with-icon twitter" href="https://www.twitter.com/" target="_blank" aria-label="visit our twitter">
+                        <span class="screen-reader-text">twitter</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- For the bottom footer -->
+          <section id="footer-bottom" class="site-section">
+            <div class="inner-wrapper">
+              <span class="copyright">Copyright 2021. All Rights Reserved</span>
+            </div>
+          </section>
+        </div>
+      </footer>
+    </div>
+
+    <script src="./js/header.js"></script>
+    <script src="./js/product.js"></script>
+  </body>
+</html>

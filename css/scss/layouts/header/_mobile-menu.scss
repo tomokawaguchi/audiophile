@@ -1,0 +1,54 @@
+//=======================================
+// Header - Mobile menu
+//=======================================
+
+// Mixin
+@use '../../abstracts' as *;
+
+#mobile-menu {
+  @include transitionEffect;
+  @include displayFlex(unset, unset);
+  flex-direction: column;
+  background-color: $color-black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  padding: 9rem 6rem 4rem;
+  transform: translateY(-100vh);
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
+
+  #mobile-main-menu {
+    flex-direction: column;
+
+    .mobile-menu-item {
+      margin-bottom: 1rem;
+
+      a {
+        padding: 0;
+      }
+    }
+  }
+
+  // Hide the mobile menu until 1200px screen size
+  @include mediaMinQuery(1200px) {
+    display: none;
+  }
+
+  @include mediaMaxQuery(810px) {
+    padding: 9rem 3rem 4rem;
+  }
+
+  @include mediaMaxQuery(440px) {
+    padding: 9rem 1rem 4rem;
+  }
+}
+
+.isMobile #mobile-menu {
+  transform: translateY(0);
+  visibility: visible;
+  opacity: 1;
+}

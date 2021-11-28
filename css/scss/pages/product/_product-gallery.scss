@@ -1,0 +1,57 @@
+//=======================================
+// Product - Galleries
+//=======================================
+
+// Variables & Mixin
+@use '../../abstracts/' as *;
+
+#product-gallery-section {
+  .inner-wrapper {
+    @include displayFlex(space-between, unset);
+
+    .col {
+      .featured-image {
+        @include backgroundImageProperties;
+        border-radius: 8px;
+        width: 100%;
+        height: 600px;
+      }
+    }
+
+    .col-1 {
+      @include flex(0 0 40%);
+
+      .col-inner {
+        @include displayFlex(space-between, unset);
+        flex-direction: column;
+        height: 100%;
+
+        .featured-image {
+          height: 280px;
+        }
+      }
+    }
+
+    .col-2 {
+      @include flex(0 0 57%);
+    }
+  }
+
+  @include mediaMaxQuery(700px) {
+    .inner-wrapper {
+      flex-wrap: wrap;
+
+      .col {
+        @include flex(1 1 100%);
+      }
+
+      .col-1 .col-inner .featured-image {
+        margin-bottom: 3rem;
+      }
+
+      .col-2 .featured-image {
+        height: 450px;
+      }
+    }
+  }
+}

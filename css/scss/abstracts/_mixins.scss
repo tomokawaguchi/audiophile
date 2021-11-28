@@ -1,0 +1,177 @@
+//=======================================
+// Mixin
+//=======================================
+
+// Mixin
+@use './variables' as *;
+
+@mixin customIcon {
+  font-family: 'fontello';
+  font-style: normal;
+  font-weight: normal;
+}
+
+// Widget Headings
+@mixin customWidgetHeadings {
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6 {
+    font-family: $headings-font-family;
+    font-weight: $base-font-weight;
+    color: $headings-color;
+    line-height: $widget-line-height;
+    margin-top: 0;
+    margin-bottom: $base-margin-bottom;
+  }
+
+  h1 {
+    font-size: $widget-size-h1;
+    letter-spacing: $widget-letter-spacing-lg;
+    text-transform: uppercase;
+  }
+  h2 {
+    font-size: $widget-size-h2;
+    letter-spacing: $widget-letter-spacing-lg;
+  }
+  h3 {
+    font-size: $widget-size-h3;
+    letter-spacing: $widget-letter-spacing-md;
+  }
+  h4 {
+    font-size: $widget-size-h4;
+    letter-spacing: $widget-letter-spacing-md;
+  }
+  h5 {
+    font-size: $widget-size-h5;
+    letter-spacing: $widget-letter-spacing-sm;
+  }
+  h6 {
+    font-size: $widget-size-h6;
+    letter-spacing: $widget-letter-spacing-sm;
+  }
+}
+
+//=======================================================
+// HOVER / FOCUS STATE
+//=======================================================
+
+@mixin onHoverFocus {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+//=======================================================
+// REMOVE LIST DEFAULT STYLING
+//=======================================================
+
+@mixin resetListing {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li a {
+    text-decoration: none;
+    color: $base-text-color;
+  }
+}
+
+//=======================================================
+// LAYOUTS
+//=======================================================
+
+@mixin displayFlex($justify, $align) {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+@mixin flex($value) {
+  -webkit-box-flex: $value; /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: $value; /* OLD - Firefox 19- */
+  -webkit-flex: $value; /* Chrome */
+  -ms-flex: $value;
+}
+
+//=======================================================
+// LINKS
+//=======================================================
+
+@mixin standardLinks {
+  color: $base-text-color;
+  text-decoration: none;
+
+  @include onHoverFocus {
+    color: $theme-1;
+  }
+}
+
+@mixin arrowLinks {
+  @include transitionEffect;
+  color: $base-text-color;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:after {
+    @include customIcon;
+    content: '\E801';
+    color: $theme-1;
+  }
+
+  .link-text {
+    font-size: $base-font-size;
+    padding-right: 1rem;
+  }
+
+  @include onHoverFocus {
+    color: $theme-1;
+  }
+}
+
+//=======================================================
+// BACKGROUND
+//=======================================================
+
+@mixin backgroundImageProperties {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+//=======================================================
+// TRANSITION
+//=======================================================
+
+@mixin transitionEffect {
+  transition: all 0.2s ease-in-out;
+}
+
+//=======================================================
+// MEDIA QUERY
+//=======================================================
+
+@mixin mediaMaxQuery($size) {
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}
+
+@mixin mediaMinQuery($size) {
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}

@@ -1,0 +1,138 @@
+//=======================================
+// Body
+//=======================================
+
+// Mixin
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// 1rem = 16px
+html {
+  font-size: 100%;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+// Body
+body {
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  font-weight: $base-font-weight;
+  color: $base-text-color;
+  background-color: $base-background-color;
+  line-height: $base-line-height;
+  overflow-x: hidden;
+}
+
+// Headings
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: $headings-font-family;
+  font-weight: $base-font-weight;
+  color: $color-black;
+  letter-spacing: $base-font-letter-spacing;
+  margin-bottom: $base-margin-bottom;
+}
+
+h1,
+.h1 {
+  font-size: $headings-size-h1;
+  line-height: $headings-line-height-h1;
+  letter-spacing: $headings-letter-spacing-h1;
+  text-transform: uppercase;
+}
+h2,
+.h2 {
+  font-size: $headings-size-h2;
+  line-height: $headings-line-height-h2;
+  letter-spacing: $headings-letter-spacing-h2;
+}
+h3,
+.h3 {
+  font-size: $headings-size-h3;
+  line-height: $headings-line-height-h3;
+  letter-spacing: $headings-letter-spacing-h3;
+}
+h4,
+.h4 {
+  font-size: $headings-size-h4;
+  line-height: $headings-line-height-h4;
+  letter-spacing: $headings-letter-spacing-h4;
+}
+h5,
+.h5 {
+  font-size: $headings-size-h5;
+  line-height: $headings-line-height-h5;
+  letter-spacing: $headings-letter-spacing-h5;
+}
+h6,
+.h6 {
+  font-size: $headings-size-h6;
+  line-height: $base-line-height;
+  letter-spacing: $headings-letter-spacing-h6;
+}
+
+// Headings in admin backend
+.logged-in .widgettitle {
+  font-size: $widget-size-h2;
+  line-height: $widget-line-height;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+// Images
+img {
+  max-width: 100%;
+}
+
+// Separators
+hr {
+  border: 0;
+  border-top: 0.1rem solid $base-text-color;
+  margin: 3rem 0;
+}
+
+// Testimonials
+blockquote {
+  margin: 0 0 2rem 0; // reset all and then add 2rem for bottom
+  font-style: italic;
+}
+
+// Code
+code {
+  color: $color-white;
+  font-size: 85%;
+  white-space: nowrap;
+  background: $theme-4;
+  padding: 2rem 4rem;
+}
+
+// Custom Icons
+.custom-icon {
+  font-family: 'fontello';
+  font-style: normal;
+  font-weight: normal;
+}
+
+// Removing default +- arrow button for input field
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}

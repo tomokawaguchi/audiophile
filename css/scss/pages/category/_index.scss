@@ -1,0 +1,22 @@
+//=======================================
+// Category Parent
+//=======================================
+
+// Mixin
+@use '../../abstracts' as *;
+
+#product-list .product-list-wrapper {
+  .product-wrapper {
+    margin-bottom: 10rem;
+  }
+  // Swap the columns
+  .product-wrapper:nth-child(even) {
+    .col-1 {
+      order: 1;
+
+      @include mediaMaxQuery(950px) {
+        order: unset;
+      }
+    }
+  }
+}

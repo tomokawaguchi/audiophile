@@ -1,0 +1,77 @@
+//=======================================
+// Cart Common Styling
+//=======================================
+
+// Mixin
+@use '../../abstracts' as *;
+
+#cart-section {
+  background-color: $theme-4;
+
+  .cart-contents {
+    background-color: $color-white;
+    border-radius: 8px;
+    padding: 3rem 6rem;
+    margin-top: 3rem;
+
+    .cart-contents-wrapper {
+      max-width: 600px;
+
+      h2 {
+        margin-bottom: 4rem;
+      }
+
+      // For the cart pricing section
+      .pricing-wrapper {
+        margin-bottom: 3rem;
+
+        .total-wrapper,
+        .shipping-wrapper,
+        .total-wrapper {
+          @include displayFlex(space-between, unset);
+
+          span {
+            font-size: 1.2rem;
+          }
+        }
+
+        .shipping-wrapper {
+          margin-bottom: 2rem;
+        }
+
+        .total-wrapper {
+          #grand-total {
+            color: $theme-1;
+          }
+        }
+      }
+
+      // for the buttons
+      .button-wrapper {
+        @include displayFlex(unset, unset);
+        flex-direction: column;
+
+        #update-button {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    // For the thank you screen
+    #cart-contents-container {
+      .ty-panel-heading {
+        margin-bottom: 2rem;
+      }
+      .short-desc {
+        font-size: 1rem;
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  @include mediaMaxQuery(850px) {
+    .cart-contents {
+      padding: 2rem;
+    }
+  }
+}

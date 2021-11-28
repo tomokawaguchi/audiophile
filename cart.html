@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <title>Audiophile e-commerce website</title>
+  </head>
+  <body>
+    <header id="site-header">
+      <!-- For the main header -->
+      <div id="header-main" class="site-section subpage">
+        <div class="inner-wrapper">
+          <!-- For the mobile menu -->
+          <div id="mobile-menu-trigger">
+            <button class="custom-site-btn" title="Mobile Menu" aria-label="Mobile Menu">
+              <i class="custom-icon menu-icon">&#xf0c9;</i>
+              <i class="custom-icon close">&#xe806;</i>
+            </button>
+          </div>
+
+          <!-- Column 1 -->
+          <div class="col col-1">
+            <a class="custom-logo-link" href="/">
+              <img class="custom-logo" src="./assets/shared/desktop/logo.svg" alt="Audiophile E-commerce" />
+            </a>
+          </div>
+
+          <!-- Column 2 -->
+          <div class="col col-2">
+            <div class="menu-cart-wrapper">
+              <!-- For the menu content -->
+              <div class="menu-content">
+                <nav class="primary-nav">
+                  <ul id="main-menu" class="main-menu navigation-menu">
+                    <li class="menu-item">
+                      <a href="/">Home</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="./headphones.html">Headphones</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="./speakers.html">Speakers</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="./earphones.html">Earphones</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+
+              <!-- For the cart icon -->
+              <div class="cart-wrapper">
+                <a class="cart-link" href="./cart.html">
+                  <i class="custom-icon cart" alt="Shopping Cart">&#xe800;</i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- For the mobile menu -->
+        <div id="mobile-menu">
+          <div class="navigation-wrapper">
+            <!-- Mobile main menu  -->
+            <nav class="mobile-primary-nav" aria-label="Mobile Main Menu">
+              <ul id="mobile-main-menu" class="mobile-main-menu navigation-menu">
+                <li class="mobile-menu-item">
+                  <a href="/">Home</a>
+                </li>
+                <li class="mobile-menu-item">
+                  <a href="./headphones.html">Headphones</a>
+                </li>
+                <li class="mobile-menu-item">
+                  <a href="./speakers.html">Speakers</a>
+                </li>
+                <li class="mobile-menu-item">
+                  <a href="./earphones.html">Earphones</a>
+                </li>
+              </ul>
+            </nav>
+
+            <!-- For the social icons -->
+            <ul class="social-section">
+              <li class="social">
+                <a class="social-item cta-with-icon facebook" href="https://www.facebook.com/" target="_blank" aria-label="visit our facebook">
+                  <span class="screen-reader-text">facebook</span>
+                </a>
+              </li>
+              <li class="social">
+                <a class="social-item cta-with-icon instagram" href="https://www.instagram.com/" target="_blank" aria-label="visit our instagram">
+                  <span class="screen-reader-text">instagram</span>
+                </a>
+              </li>
+              <li class="social">
+                <a class="social-item cta-with-icon twitter" href="https://www.twitter.com/" target="_blank" aria-label="visit our twitter">
+                  <span class="screen-reader-text">twitter</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Wrapping main body contents -> for the 'skip to target' -->
+    <div class="main-content">
+      <!-- For the main  -->
+      <main>
+        <!-- For the shopping cart list -->
+        <section id="cart-section" class="site-section">
+          <div class="inner-wrapper">
+            <!-- For the back button  -->
+            <a href="/" class="back-btn">
+              <i class="custom-icon arrow-left">&#xe803;</i>
+              <sapn>Go Back Home</sapn>
+            </a>
+
+            <!-- For the shopping cart list  -->
+            <div class="cart-contents">
+              <div id="cart-contents-container" class="cart-contents-wrapper">
+                <h2 class="panel-heading">Shopping Cart</h2>
+
+                <!-- For the cart item list  -->
+                <ul id="cart-product-list" class="shopping-cart-list">
+                  <!-- For the cart product details -->
+                </ul>
+
+                <!-- For the price details  -->
+                <div class="pricing-wrapper">
+                  <div class="total-wrapper">
+                    <span>TOTAL</span>
+                    <span id="total"></span>
+                  </div>
+                  <div class="shipping-wrapper">
+                    <span>SHIPPING</span>
+                    <span id="shipping"></span>
+                  </div>
+                  <div class="total-wrapper">
+                    <span>GRAND TOTAL</span>
+                    <span id="grand-total"></span>
+                  </div>
+                </div>
+
+                <!-- For the button wrapper -->
+                <div class="button-wrapper">
+                  <!-- For the update button  -->
+                  <button id="update-button" class="cta-button black-cta" type="button">UPDATE YOUR CART</button>
+                  <!-- For the pay button  -->
+                  <button id="confirm-button" type="button">CONFIRM & PAY</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- For the footer -->
+      <footer id="site-footer">
+        <div class="footer-main">
+          <!-- For the top footer -->
+          <section id="footer-top" class="site-section">
+            <div class="inner-wrapper">
+              <!-- Column 1 -->
+              <div class="col col-1">
+                <div class="logo-about-wrapper">
+                  <a class="custom-logo-link" href="/">
+                    <img class="custom-logo" src="./assets/shared/desktop/logo.svg" alt="Audiophile E-commerce" />
+                  </a>
+                  <p class="about-desc">
+                    Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal
+                    audio. Come and visit our demo facility - we’re open 7 days a week.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Column 2 -->
+              <div class="col col-2">
+                <div class="col-inner">
+                  <!-- For the footer menu -->
+                  <nav class="footer-nav">
+                    <ul id="footer-menu" class="footer-menu navigation-menu">
+                      <li class="menu-item">
+                        <a href="/">Home</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="./headphones.html">Headphones</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="./speakers.html">Speakers</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="./earphones.html">Earphones</a>
+                      </li>
+                    </ul>
+                  </nav>
+
+                  <!-- For the social icons -->
+                  <ul class="social-section">
+                    <li class="social">
+                      <a class="social-item cta-with-icon facebook" href="https://www.facebook.com/" target="_blank" aria-label="visit our facebook">
+                        <span class="screen-reader-text">facebook</span>
+                      </a>
+                    </li>
+                    <li class="social">
+                      <a class="social-item cta-with-icon instagram" href="https://www.instagram.com/" target="_blank" aria-label="visit our instagram">
+                        <span class="screen-reader-text">instagram</span>
+                      </a>
+                    </li>
+                    <li class="social">
+                      <a class="social-item cta-with-icon twitter" href="https://www.twitter.com/" target="_blank" aria-label="visit our twitter">
+                        <span class="screen-reader-text">twitter</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- For the bottom footer -->
+          <section id="footer-bottom" class="site-section">
+            <div class="inner-wrapper">
+              <span class="copyright">Copyright 2021. All Rights Reserved</span>
+            </div>
+          </section>
+        </div>
+      </footer>
+    </div>
+
+    <script src="./js/header.js"></script>
+    <script src="./js/cart.js"></script>
+    <script src="./js/product.js"></script>
+  </body>
+</html>

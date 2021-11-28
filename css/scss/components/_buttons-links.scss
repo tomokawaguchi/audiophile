@@ -1,0 +1,62 @@
+//=======================================
+// Buttons and Links
+//=======================================
+
+// Variables & Mixin
+@use '../abstracts/' as *;
+
+// Standard reset for default button stylings
+button {
+  border: none;
+  background-color: transparent;
+}
+
+// CTA button | form button
+button:not(.custom-site-btn),
+.cta-button {
+  @include transitionEffect;
+  display: inline-block;
+  font-family: $font-manrope;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  color: $color-white;
+  background-color: $theme-1;
+  padding: 0.8rem 2.5rem;
+  cursor: pointer;
+
+  @include onHoverFocus {
+    background-color: $theme-2;
+  }
+}
+
+// CTA button black
+.cta-button.black-cta {
+  background-color: $color-black;
+
+  @include onHoverFocus {
+    background-color: $theme-6;
+  }
+}
+
+// CTA button grey
+.cta-button.grey-cta {
+  color: $color-black;
+  background-color: $theme-4;
+  border: 1px solid $color-black;
+
+  @include onHoverFocus {
+    color: $color-white;
+    background-color: $color-black;
+  }
+}
+
+// Standard link
+.standard-link {
+  @include standardLinks;
+}
+
+//Arrow link
+.arrow-link {
+  @include arrowLinks;
+}

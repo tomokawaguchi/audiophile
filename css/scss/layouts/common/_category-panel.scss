@@ -1,0 +1,96 @@
+//=======================================
+// Buttons and Links
+//=======================================
+
+// Variables & Mixin
+@use '../../abstracts/' as *;
+
+#category-panel {
+  .cat-items-wrapper {
+    @include displayFlex(space-between, unset);
+
+    .cat-item {
+      @include flex(0 0 32%);
+      position: relative;
+      text-decoration: none;
+      cursor: pointer;
+
+      .featured-image {
+        @include backgroundImageProperties;
+        position: absolute;
+        top: -140px;
+        left: 15%;
+        width: 70%;
+        height: 125%;
+
+        @include mediaMaxQuery(1140px) {
+          top: -90px;
+          height: 100%;
+        }
+      }
+
+      .text-wrapper {
+        @include displayFlex(unset, unset);
+        flex-direction: column;
+        text-align: center;
+        background-color: $theme-4;
+        border-radius: 8px;
+        padding: 8rem 3rem 3rem;
+
+        .cat-name {
+          font-size: 1.2rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          color: $color-black;
+          margin-bottom: 1rem;
+        }
+
+        .link-text {
+          @include transitionEffect;
+        }
+      }
+
+      @include onHoverFocus {
+        .link-text {
+          color: $theme-1;
+        }
+      }
+    }
+  }
+
+  @include mediaMaxQuery(920px) {
+    .cat-items-wrapper {
+      flex-wrap: wrap;
+
+      .cat-item {
+        @include flex(0 0 100%);
+
+        .featured-image {
+          top: -150px;
+          left: 25%;
+          height: 140%;
+          width: 50%;
+        }
+      }
+
+      .cat-item:not(:last-child) {
+        margin-bottom: 10rem;
+      }
+    }
+  }
+
+  @include mediaMaxQuery(600px) {
+    .cat-items-wrapper {
+      .cat-item {
+        .featured-image {
+          top: -100px;
+          height: 100%;
+        }
+      }
+
+      .cat-item:not(:last-child) {
+        margin-bottom: 8rem;
+      }
+    }
+  }
+}

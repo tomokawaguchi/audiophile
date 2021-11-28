@@ -1,0 +1,56 @@
+//=======================================
+// Suggest Products Panel
+//=======================================
+
+// Variables & Mixin
+@use '../../abstracts/' as *;
+
+#suggest-panel {
+  margin-bottom: 6rem;
+
+  .panel-heading {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .suggest-products-wrapper {
+    @include displayFlex(space-between, unset);
+
+    .suggest-product {
+      @include flex(0 0 32%);
+
+      .col-1 {
+        margin-bottom: 2rem;
+
+        .featured-image {
+          @include backgroundImageProperties;
+          border-radius: 8px;
+          width: 100%;
+          height: 400px;
+        }
+      }
+
+      .text-wrapper {
+        text-align: center;
+      }
+    }
+  }
+
+  @include mediaMaxQuery(1100px) {
+    .suggest-products-wrapper .suggest-product .col-1 .featured-image {
+      background-size: contain;
+      height: 300px;
+    }
+  }
+
+  @include mediaMaxQuery(920px) {
+    .suggest-products-wrapper {
+      flex-wrap: wrap;
+
+      .suggest-product {
+        @include flex(1 1 100%);
+        margin-bottom: 3rem;
+      }
+    }
+  }
+}

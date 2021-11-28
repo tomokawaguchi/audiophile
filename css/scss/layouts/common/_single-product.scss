@@ -1,0 +1,109 @@
+//=======================================
+// Product Panel Layout
+//=======================================
+
+// Mixin
+@use '../../abstracts' as *;
+
+// For the back button
+.back-btn {
+  @include transitionEffect;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: $theme-6;
+
+  .arrow-left {
+    @include transitionEffect;
+    color: $theme-6;
+    margin-right: 0.7rem;
+  }
+
+  @include onHoverFocus {
+    color: $theme-1;
+
+    .arrow-left {
+      color: $theme-1;
+    }
+  }
+}
+
+// For the product
+.product-wrapper {
+  @include displayFlex(unset, unset);
+  margin-top: 3rem;
+
+  .col {
+    @include flex(1 1 100%);
+  }
+
+  .col-1 {
+    .featured-image {
+      @include backgroundImageProperties;
+      border-radius: 8px;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 560px;
+    }
+  }
+
+  .col-2 {
+    @include displayFlex(unset, center);
+
+    .content-wrapper {
+      padding: 4rem 0 4rem 4rem;
+
+      .text-wrapper {
+        margin-bottom: 3rem;
+
+        .overline-text {
+          color: $theme-1;
+        }
+
+        .price {
+          font-size: 1.125rem;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+
+.product-wrapper.even {
+  .col-2 .content-wrapper {
+    padding: 4rem 4rem 4rem 0;
+
+    @include mediaMaxQuery(950px) {
+      padding: 0;
+    }
+  }
+}
+
+@include mediaMaxQuery(950px) {
+  .product-wrapper {
+    flex-wrap: wrap;
+
+    .col-1 {
+      margin-bottom: 4rem;
+    }
+
+    .col-2 .content-wrapper {
+      padding: 0;
+      text-align: center;
+    }
+  }
+}
+
+@include mediaMaxQuery(600px) {
+  .product-wrapper {
+    .col-1 .featured-image {
+      height: 460px;
+    }
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,51 @@
+//=======================================
+// Social Icons Group
+//=======================================
+
+// Variables & Mixin
+@use '../abstracts/' as *;
+
+// For the social icon list
+.social-section {
+  @include displayFlex(unset, unset);
+  @include resetListing;
+  width: 100%;
+  margin: 1rem 0;
+
+  // For the common styling
+  .social {
+    padding-right: 2rem;
+    .social-item {
+      @include customIcon;
+      @include transitionEffect;
+      text-decoration: none;
+      color: $color-white;
+      font-size: 1.5rem;
+
+      @include onHoverFocus {
+        color: $theme-1;
+      }
+    }
+  }
+
+  // For Facebook icon
+  .social .facebook {
+    &:after {
+      content: '\F30E';
+    }
+  }
+
+  // For Instagram icon
+  .social .instagram {
+    &:after {
+      content: '\F16D';
+    }
+  }
+
+  // For Twitter icon
+  .social .twitter {
+    &:after {
+      content: '\F309';
+    }
+  }
+}

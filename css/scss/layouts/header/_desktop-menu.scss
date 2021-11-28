@@ -1,0 +1,20 @@
+//=======================================
+// Header - Desktop menu
+//=======================================
+
+// Mixin
+@use '../../abstracts' as *;
+
+// For the common styling
+.navigation-menu {
+  @include displayFlex(unset, unset);
+  @include resetListing;
+
+  li a {
+    @include transitionEffect;
+    @include standardLinks;
+    text-transform: uppercase;
+    color: $color-white;
+    padding: 0 1.5rem;
+  }
+}

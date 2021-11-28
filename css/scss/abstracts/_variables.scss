@@ -1,0 +1,95 @@
+//=======================================
+// Variables
+//=======================================
+
+/*=============================================/
+This is to create css variables to use in scss
+/*============================================*/
+
+// Fonts
+$font-manrope: 'Manrope', sans-serif;
+
+$heading-font: $font-manrope;
+$subheading-font: $font-manrope;
+$paragraph-font: $font-manrope;
+
+// Colors
+$color-white: #fff;
+$color-black: #000;
+$color-red: #cd2c2c;
+$color-ac-green: #2e8540;
+
+$theme-1: #d87d4a;
+$theme-2: #fbaf85;
+$theme-3: #101010;
+$theme-4: #f1f1f1;
+$theme-5: #fafafa;
+$theme-6: #4c4c4c;
+
+// Background
+$background-color-default: $color-white;
+$background-color-light: $theme-4;
+$background-color-dark: $color-black;
+
+// Body base (default setting if not specify)
+$base-font-family: $font-manrope;
+$base-font-size: 0.94rem;
+$base-font-weight: 400;
+$base-text-color: $color-black;
+$base-font-letter-spacing: 0;
+$base-line-height: 1.7;
+$base-background-color: $color-white;
+$base-margin-bottom: 2rem;
+
+// Headings base (font-family, color, size)
+$headings-font-family: $heading-font;
+$headings-color: $base-text-color;
+$headings-size-h1: 3.5rem;
+$headings-size-h2: 2.5rem;
+$headings-size-h3: 2rem;
+$headings-size-h4: 1.75rem;
+$headings-size-h5: 1.5rem;
+$headings-size-h6: 1.125rem;
+
+// Line height
+$headings-line-height-h1: 1.2;
+$headings-line-height-h2: 1.2;
+$headings-line-height-h3: 1.2;
+$headings-line-height-h4: 1.1;
+$headings-line-height-h5: 1.1;
+$headings-line-height-h6: 1.1;
+
+// Letter spacing
+$headings-letter-spacing-h1: 0.2rem;
+$headings-letter-spacing-h2: 0.2rem;
+$headings-letter-spacing-h3: 0.1rem;
+$headings-letter-spacing-h4: 0.1rem;
+$headings-letter-spacing-h5: 0.1rem;
+$headings-letter-spacing-h6: 0.1rem;
+
+// Widgets
+// Font size
+$widget-size-h1: 2.4rem;
+$widget-size-h2: 2.2rem;
+$widget-size-h3: 2rem;
+$widget-size-h4: 1.8rem;
+$widget-size-h5: 1.6rem;
+$widget-size-h6: 1.4rem;
+
+// Line height
+$widget-line-height: 1.2;
+
+// Letter spacing
+$widget-letter-spacing-lg: 0.4rem;
+$widget-letter-spacing-md: 0.3rem;
+$widget-letter-spacing-sm: 0.2rem;
+
+// Links base
+$base-link-color: $color-black;
+
+// Buttons base
+$btn-font-size: 0.82rem;
+$btn-font-family: $heading-font;
+$btn-color: $color-white;
+$btn-background: $theme-1;
+$btn-padding: 0.4em 0.7em;

@@ -1,0 +1,74 @@
+//=======================================
+// Banner main
+//=======================================
+
+// Mixin
+@use '../../abstracts' as *;
+
+#banner-section .inner-wrapper {
+  padding: 20rem 0;
+
+  // For the banner image
+  .featured-image {
+    @include backgroundImageProperties;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 840px;
+    z-index: -1;
+
+    &.tablet,
+    &.mobile {
+      display: none;
+    }
+  }
+
+  // For the content + cta button
+  .content-wrapper {
+    max-width: 400px;
+
+    .text-wrapper {
+      color: $theme-4;
+      margin-bottom: 2.5rem;
+
+      > h1 {
+        color: $color-white;
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  //   For the tablet screen
+  @include mediaMaxQuery(1200px) {
+    .featured-image {
+      &.tablet {
+        display: block;
+      }
+      &.desktop,
+      &.mobile {
+        display: none;
+      }
+    }
+    .content-wrapper {
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+  @include mediaMaxQuery(600px) {
+    .featured-image {
+      &.mobile {
+        display: block;
+      }
+      &.tablet {
+        display: none;
+      }
+    }
+    .content-wrapper {
+      h1 {
+        font-size: 2.25rem;
+      }
+    }
+  }
+}

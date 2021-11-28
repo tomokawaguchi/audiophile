@@ -1,0 +1,54 @@
+//=======================================
+// Product - Common Styling
+//=======================================
+
+// Variables & Mixin
+@use '../../abstracts/' as *;
+
+.button-wrapper {
+  @include displayFlex(unset, unset);
+
+  .qty-fields-wrappeer {
+    @include displayFlex(unset, center);
+    background-color: $theme-4;
+    padding: 1rem;
+    margin-right: 2rem;
+
+    button {
+      @include transitionEffect;
+      cursor: pointer;
+
+      .custom-icon {
+        @include transitionEffect;
+      }
+
+      @include onHoverFocus {
+        .custom-icon {
+          color: $theme-1;
+        }
+      }
+    }
+
+    .qty-input {
+      border: none;
+      background: transparent;
+      width: 65px;
+      text-align: center;
+      font-weight: 700;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  @include mediaMaxQuery(920px) {
+    justify-content: center;
+  }
+}
+
+// For the message when item(s) added
+.add-message {
+  color: $theme-1;
+  font-weight: 700;
+}

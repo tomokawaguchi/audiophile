@@ -1,0 +1,64 @@
+//=======================================
+// Buttons and Links
+//=======================================
+
+// Variables & Mixin
+@use '../../abstracts/' as *;
+
+#about-panel .inner-wrapper {
+  @include displayFlex(space-between, unset);
+
+  .col {
+    @include flex(0 0 46%);
+  }
+
+  .col-1 {
+    @include displayFlex(unset, center);
+
+    .text-wrapper {
+      max-width: 445px;
+
+      h2 .text-decoration {
+        color: $theme-1;
+      }
+    }
+  }
+
+  .col-2 .featured-image {
+    @include backgroundImageProperties;
+    border-radius: 8px;
+    width: 100%;
+    height: 600px;
+  }
+
+  @include mediaMaxQuery(920px) {
+    flex-wrap: wrap;
+
+    .col {
+      @include flex(0 0 100%);
+    }
+
+    // Swapping order of columns
+    .col-1 {
+      order: 1;
+
+      .text-wrapper {
+        text-align: center;
+        max-width: 100%;
+      }
+    }
+
+    .col-2 {
+      margin-bottom: 3rem;
+
+      .featured-image {
+        height: 320px;
+      }
+    }
+  }
+  @include mediaMaxQuery(600px) {
+    .col-1 .text-wrapper h2 {
+      font-size: 2rem;
+    }
+  }
+}

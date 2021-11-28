@@ -1,0 +1,133 @@
+//=======================================
+// Footer layout
+//=======================================
+
+// Mixin
+@use '../../abstracts' as *;
+
+#site-footer {
+  background-color: $color-black;
+
+  //   For the top footer
+  #footer-top .inner-wrapper {
+    @include displayFlex(unset, unset);
+
+    .col {
+      @include flex(0 0 50%);
+    }
+
+    .col-1 .logo-about-wrapper {
+      max-width: 540px;
+
+      .custom-logo-link {
+        @include transitionEffect;
+        max-width: 160px;
+        height: 100%;
+
+        .custom-logo {
+          @include transitionEffect;
+        }
+
+        @include onHoverFocus {
+          .custom-logo {
+            transform: scale(0.95);
+          }
+        }
+      }
+      .about-desc {
+        color: $color-white;
+        margin: 2rem 0;
+      }
+    }
+
+    .col-2 .col-inner {
+      @include displayFlex(space-between, flex-end);
+      flex-direction: column;
+      height: 100%;
+
+      // For the footer nav
+      .footer-nav #footer-menu .menu-item:last-child a {
+        padding-right: 0;
+      }
+      .social-section {
+        justify-content: flex-end;
+
+        .social {
+          padding-right: 0;
+          padding-left: 2rem;
+        }
+      }
+    }
+  }
+
+  // For the bottom footer
+  #footer-bottom > .inner-wrapper {
+    padding: 2rem 0;
+
+    .copyright {
+      color: $color-white;
+    }
+  }
+
+  @include mediaMaxQuery(1140px) {
+    #footer-top .inner-wrapper {
+      flex-wrap: wrap;
+      padding: 4rem 0;
+
+      .col {
+        @include flex(0 0 100%);
+      }
+
+      .col-2 .col-inner {
+        align-items: flex-start;
+
+        // For the footer nav
+        .footer-nav {
+          margin-bottom: 2rem;
+          width: 100%;
+
+          #footer-menu .menu-item:first-child a {
+            padding-left: 0;
+          }
+        }
+        .social-section {
+          justify-content: flex-start;
+
+          .social:first-child {
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
+  @include mediaMaxQuery(600px) {
+    #footer-top .inner-wrapper {
+      .col {
+        text-align: center;
+      }
+
+      .col-2 .col-inner {
+        .footer-nav #footer-menu {
+          flex-wrap: wrap;
+
+          .menu-item {
+            @include flex(0 0 100%);
+            margin-bottom: 1rem;
+
+            a {
+              padding: 0;
+            }
+          }
+        }
+
+        .social-section {
+          justify-content: center;
+        }
+      }
+    }
+
+    #footer-bottom .inner-wrapper {
+      text-align: center;
+    }
+  }
+}

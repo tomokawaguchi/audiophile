@@ -1,0 +1,64 @@
+//=======================================
+// Main
+//=======================================
+
+//******************** Base ********************//
+@use './scss/base/reset';
+@use './scss/base/fonts';
+
+// //******************** Abstracts ********************//
+// @use './scss/abstracts';
+
+//******************** Components ********************//
+@use './scss/components/global';
+@use './scss/components/body';
+@use './scss/components/accessibility';
+@use './scss/components/buttons-links';
+@use './scss/components/social-group';
+
+//******************** Layouts ********************//
+@use './scss/layouts/optimise';
+@use './scss/layouts/header';
+@use './scss/layouts/header/header-layouts';
+@use './scss/layouts/header/desktop-menu';
+@use './scss/layouts/header/mobile-menu';
+@use './scss/layouts/banners';
+@use './scss/layouts/banners/subpage';
+@use './scss/layouts/footer';
+@use './scss/layouts/common/about-panel';
+@use './scss/layouts/common/category-panel';
+@use './scss/layouts/common/single-product';
+@use './scss/layouts/common/suggest-panel';
+
+//******************** Layouts / Grid layouts ********************//
+// // List layouts
+// @use './scss/layouts/common/list-layout/standard-list-layout';
+// // Grid layouts
+// @use './scss/layouts/common/grid-layout/three-mix-grid-layout';
+// @use './scss/layouts/common/grid-layout/standard-grid-layout';
+// @use './scss/layouts/common/grid-layout/full-row-grid-layout';
+// // Grid items
+// @use './scss/layouts/common/grid-layout/grid-item/grid-item-standard';
+// @use './scss/layouts/common/grid-layout/grid-item/grid-item-reveal';
+// @use './scss/layouts/common/grid-layout/grid-item/grid-item-reveal-2';
+// @use './scss/layouts/common/grid-layout/grid-item/grid-item-reveal-3';
+// @use './scss/layouts/common/grid-layout/grid-item/grid-item-title-btn';
+// @use './scss/layouts/common/grid-layout/grid-item/grid-item-static';
+
+//******************** Pages ********************//
+
+// Home page
+@use './scss/pages/home/home-main';
+@use './scss/pages/home/home-panel-3';
+
+// Category
+@use './scss/pages/category';
+
+// Product
+@use './scss/pages/product';
+@use './scss/pages/product/product-features';
+@use './scss/pages/product/product-gallery';
+
+// Cart
+@use './scss/pages/cart';
+@use './scss/pages/cart/cart-item-grid';

@@ -1,0 +1,69 @@
+//=======================================
+// Product - Featured Panel
+//=======================================
+
+// Variables & Mixin
+@use '../../abstracts/' as *;
+
+#product-features-section .inner-wrapper {
+  @include displayFlex(unset, unset);
+
+  .col-1 {
+    @include flex(0 0 65%);
+
+    .col-inner {
+      max-width: 635px;
+      padding-right: 4rem;
+
+      .desc {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  .col-2 {
+    @include flex(0 0 35%);
+
+    .contents-list {
+      @include resetListing;
+
+      li {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+
+        span {
+          color: $theme-1;
+          font-weight: 700;
+          margin-right: 2rem;
+        }
+      }
+    }
+  }
+
+  @include mediaMaxQuery(920px) {
+    flex-wrap: wrap;
+
+    .col {
+      @include flex(1 1 100%);
+    }
+
+    .col-1 {
+      margin-bottom: 5rem;
+    }
+
+    .col-2 .col-inner {
+      @include displayFlex(space-between, unset);
+    }
+  }
+
+  @include mediaMaxQuery(700px) {
+    .col-1 {
+      margin-bottom: 3rem;
+    }
+
+    .col-2 .col-inner {
+      justify-content: unset;
+      flex-direction: column;
+    }
+  }
+}

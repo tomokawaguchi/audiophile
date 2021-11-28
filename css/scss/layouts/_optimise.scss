@@ -1,0 +1,26 @@
+//=======================================
+// Optimise layout
+//=======================================
+
+// Mixin
+@use '../abstracts' as *;
+
+.site-section {
+  position: relative;
+  padding: 0 6rem;
+  z-index: 1;
+
+  > .inner-wrapper {
+    max-width: 1440px;
+    padding: 7rem 0;
+    margin: 0 auto;
+  }
+
+  // For the media query -> .site-section
+  @include mediaMaxQuery(810px) {
+    padding: 0 3rem;
+  }
+  @include mediaMaxQuery(440px) {
+    padding: 0 1rem;
+  }
+}

@@ -1,0 +1,23 @@
+//=======================================
+// Banner main
+//=======================================
+
+// Mixin
+@use '../../abstracts' as *;
+
+#subpage-banner-section {
+  background-color: $color-black;
+
+  &.category-banner {
+    h1 {
+      color: $color-white;
+      text-align: center;
+    }
+
+    @include mediaMaxQuery(600px) {
+      h1 {
+        font-size: 2.25rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+//=======================================
+// Body
+//=======================================
+
+// Mixin
+@use '../abstracts' as *;
+
+// For the text
+.panel-heading {
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 2.5rem;
+
+  &.large {
+    font-size: 3.5rem;
+  }
+
+  &.medium {
+    font-size: 1.75rem;
+  }
+}
+
+.overline-text {
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-size: 0.875rem;
+  margin-bottom: 2rem;
+}

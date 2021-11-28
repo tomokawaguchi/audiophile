@@ -1,0 +1,177 @@
+//=======================================
+// Home - Panel 3
+//=======================================
+
+// Variables & Mixin
+@use '../../abstracts/' as *;
+
+#home-panel-3 {
+  // For the common styling
+  .featured-product {
+    @include displayFlex(space-between, unset);
+    border-radius: 8px;
+    margin-bottom: 3rem;
+
+    .col {
+      @include flex(1 1 100%);
+
+      .featured-image {
+        @include backgroundImageProperties;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  // For the 1st featured item
+  .featured-product.speaker-1 {
+    @include backgroundImageProperties;
+    background-image: url(../../assets/home/desktop/pattern-circles.svg);
+    background-size: 70%;
+    background-position: -35% 20%;
+    background-color: $theme-1;
+
+    .col-1 .featured-image {
+      background-size: contain;
+      width: 50%;
+      height: 400px;
+      margin: 0 auto;
+      margin-top: 6rem;
+    }
+
+    .col-2 .inner-wrapper {
+      @include displayFlex(unset, center);
+      height: 100%;
+
+      .text-wrapper {
+        color: $color-white;
+        max-width: 360px;
+
+        #speaker {
+          color: $color-white;
+          max-width: 260px;
+        }
+
+        .desc-text {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+    @include mediaMaxQuery(1100px) {
+      .col-1 .featured-image {
+        width: 65%;
+      }
+    }
+
+    @include mediaMaxQuery(920px) {
+      flex-wrap: wrap;
+      background-size: 90%;
+      background-position: center -50%;
+
+      .col {
+        margin-bottom: 3.5rem;
+      }
+
+      .col-1 .featured-image {
+        height: 320px;
+      }
+
+      .col-2 .inner-wrapper {
+        justify-content: center;
+        text-align: center;
+        max-width: 100%;
+
+        .text-wrapper #speaker {
+          max-width: 100%;
+        }
+      }
+    }
+
+    @include mediaMaxQuery(700px) {
+      background-size: 100%;
+      background-position: top;
+    }
+
+    @include mediaMaxQuery(600px) {
+      .col-2 .inner-wrapper .text-wrapper #speaker {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  // For the 2nd featured item
+  .featured-product.speaker-2 {
+    position: relative;
+    height: 360px;
+
+    .col-1 .featured-image {
+      position: absolute;
+      border-radius: 8px;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .col-2 {
+      position: absolute;
+      height: 100%;
+      left: 100px;
+
+      .text-wrapper {
+        padding: 7rem 0;
+      }
+    }
+
+    @include mediaMaxQuery(920px) {
+      .col-2 {
+        left: 50px;
+      }
+    }
+  }
+
+  // For the 3rd featured item
+  .featured-product.earphones {
+    .col {
+      height: 360px;
+    }
+
+    .col-1 {
+      margin-right: 2rem;
+
+      .featured-image {
+        border-radius: 8px;
+      }
+    }
+
+    .col-2 {
+      background-color: $theme-4;
+      border-radius: 8px;
+      margin-left: 2rem;
+
+      .text-wrapper {
+        padding: 7rem 5rem;
+      }
+    }
+
+    @include mediaMaxQuery(920px) {
+      flex-wrap: wrap;
+
+      .col {
+        height: 320px;
+      }
+
+      .col-1 {
+        margin-right: 0;
+        margin-bottom: 2rem;
+      }
+
+      .col-2 {
+        margin-left: 0;
+
+        .text-wrapper {
+          padding: 5.5rem 3.125rem;
+        }
+      }
+    }
+  }
+}

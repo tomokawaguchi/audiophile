@@ -1,0 +1,154 @@
+//=======================================
+// Header layout
+//=======================================
+
+// Mixin
+@use '../../abstracts' as *;
+
+#header-main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+
+  .inner-wrapper {
+    @include displayFlex(space-between, center);
+    border-bottom: 1px solid $color-white;
+    padding: 2.5rem 0;
+
+    // For the hamburger menu
+    #mobile-menu-trigger {
+      display: none;
+
+      button {
+        @include transitionEffect;
+        @include displayFlex(center, center);
+        border: none;
+        background-color: transparent;
+        margin-right: 2rem;
+        outline: none;
+        cursor: pointer;
+        text-decoration: none;
+        width: 2rem;
+        height: 2rem;
+
+        .custom-icon {
+          font-size: 1.2rem;
+          color: $color-white;
+        }
+
+        .close {
+          display: none;
+        }
+
+        @include onHoverFocus {
+          border-radius: 50rem;
+          background-color: $theme-1;
+        }
+      }
+    }
+
+    // For the logo
+    .col-1 {
+      @include flex(0 1 400px);
+
+      .custom-logo-link {
+        @include transitionEffect;
+        max-width: 160px;
+        height: 100%;
+
+        .custom-logo {
+          @include transitionEffect;
+        }
+
+        @include onHoverFocus {
+          .custom-logo {
+            transform: scale(0.95);
+          }
+        }
+      }
+    }
+
+    // For the menu + shopping cart
+    .col-2 {
+      @include flex(1 auto);
+
+      .menu-cart-wrapper {
+        @include displayFlex(space-between, center);
+      }
+
+      .cart-wrapper {
+        @include flex(0 0 100px);
+        @include displayFlex(flex-end, center);
+
+        .cart-link {
+          @include displayFlex(center, center);
+          @include transitionEffect;
+          position: relative;
+          text-decoration: none;
+          width: 1.5rem;
+          height: 1.5rem;
+          padding: 0.5rem;
+
+          // For the icon
+          .cart {
+            font-size: 1.2rem;
+            color: $color-white;
+          }
+
+          @include onHoverFocus {
+            border-radius: 50rem;
+            background-color: $theme-1;
+          }
+        }
+      }
+    }
+
+    // For the mobile menu
+    @include mediaMaxQuery(1200px) {
+      padding: 1.5rem 0;
+
+      #mobile-menu-trigger {
+        display: block;
+      }
+
+      .col-2 .menu-content {
+        display: none;
+      }
+
+      .col-2 .cart-wrapper {
+        @include flex(auto);
+      }
+    }
+  }
+}
+
+// For the child page --> no border bottom line for header
+#header-main.subpage {
+  background-color: $color-black;
+
+  .inner-wrapper {
+    border-bottom: none;
+  }
+}
+
+// For the active scroll header styling
+#header-main.active-scroll {
+  background-color: $color-black;
+
+  .inner-wrapper {
+    border-bottom: transparent;
+  }
+}
+
+// For the icon update when the mobile menu is open
+.isMobile #header-main .inner-wrapper #mobile-menu-trigger button {
+  .menu-icon {
+    display: none;
+  }
+  .close {
+    display: block;
+    transform: rotate(45deg);
+  }
+}
