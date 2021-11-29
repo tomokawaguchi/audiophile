@@ -48,6 +48,10 @@ const totalBtn = document.getElementById('total');
 const shippingBtn = document.getElementById('shipping');
 const grandTotalBtn = document.getElementById('grand-total');
 
+const emptyItemMessage = `<h2 class="ty-panel-heading">No item added yet :(</h2>
+  <p class="short-desc">Browse more to find our awesome products!</p>
+  <a class="cta-button" href="/">Back to Shop Home</a>`;
+
 if (localStorage && localStorage.length > 0) {
   // Obtaining the data from local storage and convert it into object
   const localStorageArray = Object.entries(localStorage);
@@ -69,12 +73,15 @@ if (localStorage && localStorage.length > 0) {
               <span class="product-name">${name}</span>
               <span class="price">$ ${price}</span>
             </div>
-        
-            <!-- For the quantity field  -->
-            <div class="qty-fields-wrapper">
-              <button class="custom-site-btn qty-decrease"><i class="custom-icon minus">&#xe807;</i></button>
-              <input class="qty-input" type="number" name="quantity" value="${addedItemQty}" data-product-id="${addedItemId}" />
-              <button class="custom-site-btn qty-increase"><i class="custom-icon plus">&#xe806;</i></button>
+
+            <div class="qty-remove-btns">
+              <!-- For the quantity field  -->
+              <div class="qty-fields-wrapper">
+                <button class="custom-site-btn qty-decrease"><i class="custom-icon minus">&#xe807;</i></button>
+                <input class="qty-input" type="number" name="quantity" value="${addedItemQty}" data-product-id="${addedItemId}" />
+                <button class="custom-site-btn qty-increase"><i class="custom-icon plus">&#xe806;</i></button>
+              </div>
+              <button class="remove-btn" type="button">Remove</button>
             </div>
           </div>
         </li>`;
@@ -83,14 +90,44 @@ if (localStorage && localStorage.length > 0) {
       productSubTotalPrice = 0;
     }
   }
-
+   
   // for the prices update
   calcPrices(totalPrice);
 } else {
   // Add the empty cart message
-  container.innerHTML = `<h2 class="ty-panel-heading">No item added yet :(</h2>
-  <p class="short-desc">Browse more to find our awesome products!</p>
-  <a class="cta-button" href="/">Back to Shop Home</a>`;
+  container.innerHTML = emptyItemMessage;
+}
+
+//=======================================
+// Handing Remove Button on the Cart page
+//=======================================
+
+const removeButton = document.getElementsByClassName('remove-btn');
+
+if(removeButton) {
+  for(let i = 0; i < removeButton.length; i++) {
+    removeButton[i].addEventListener('click', function(e) {
+      const selectedId = e.target.previousElementSibling.querySelector('.qty-input').dataset.productId;
+      const selectedLi = e.target.parentNode.parentNode.parentNode;
+      const ulElement = document.getElementById('cart-product-list');
+      ulElement.removeChild(selectedLi);
+      // Remove from local storage 
+      localStorage.removeItem(selectedId);
+      // Reload  the file
+      location.reload();
+      
+      // If there is no item left, show the empty message
+      if(localStorage.length == 0) {
+        container.innerHTML = emptyItemMessage;
+      } else {
+        // For the price calculation
+        calcPrices(getUpdatedPrice());
+      }
+      
+    });
+
+    location.reload;
+  }
 }
 
 //=======================================
@@ -101,27 +138,34 @@ const qtyInputs = document.getElementsByClassName('qty-input');
 
 if (updateButton) {
   updateButton.addEventListener('click', function () {
-    let newTotalPrice = 0;
-    for (let i = 0; i < qtyInputs.length; i++) {
-      let newQty = parseInt(qtyInputs[i].value, 10);
-      const productId = qtyInputs[i].dataset.productId;
-      const productPrice = parseInt(productsData[productId].price, 10);
-      let newSubTotalPrice = productPrice * newQty;
-      newTotalPrice += newSubTotalPrice;
-      newSubTotalPrice = 0;
-
-      // Update the local story
-      if (newQty == 0) {
-        localStorage.removeItem(productId);
-      } else {
-        localStorage.setItem(productId, newQty);
-      }
-    }
-
-    // For the price calculation
-    calcPrices(newTotalPrice);
+    // Getting new prices, calculate the total and display them
+    calcPrices(getUpdatedPrice());
   });
 }
+
+//=======================================
+// Handing obtaining UPDATED prices
+//=======================================
+function getUpdatedPrice() {
+  let newTotalPrice = 0;
+  for (let i = 0; i < qtyInputs.length; i++) {
+    let newQty = parseInt(qtyInputs[i].value, 10);
+    const productId = qtyInputs[i].dataset.productId;
+    const productPrice = parseInt(productsData[productId].price, 10);
+    let newSubTotalPrice = productPrice * newQty;
+    newTotalPrice += newSubTotalPrice;
+    newSubTotalPrice = 0;
+
+    // Update the local story
+    if (newQty == 0) {
+      localStorage.removeItem(productId);
+    } else {
+      localStorage.setItem(productId, newQty);
+    }
+  }
+  return newTotalPrice;
+}
+
 
 //=======================================
 // Handing calculation of prices and updating them accordingly

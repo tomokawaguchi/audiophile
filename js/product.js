@@ -71,9 +71,9 @@ if (decreaseBtn) {
   for (let i = 0; i < decreaseBtn.length; i++) {
     decreaseBtn[i].addEventListener('click', function () {
       let qtyValue = parseInt(qtyInput[i].value, 10);
-      qtyValue = isNaN(qtyValue) ? 0 : qtyValue;
+      qtyValue = isNaN(qtyValue) ? 1 : qtyValue;
       qtyValue--;
-      qtyValue = qtyValue < 0 ? 0 : qtyValue;
+      qtyValue = qtyValue < 1 ? 1 : qtyValue;
       qtyInput[i].value = qtyValue;
     });
   }

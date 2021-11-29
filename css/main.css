@@ -2015,7 +2015,18 @@ button:not(.custom-site-btn):hover, button:not(.custom-site-btn):focus,
   font-weight: 700;
   margin-bottom: 1rem;
 }
-.shopping-cart-list .cart-item-wrapper .details-wrapper .qty-fields-wrapper {
+.shopping-cart-list .cart-item-wrapper .details-wrapper .qty-remove-btns {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: unset;
+  flex-direction: column;
+  height: 100%;
+}
+.shopping-cart-list .cart-item-wrapper .details-wrapper .qty-remove-btns .qty-fields-wrapper {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -2025,26 +2036,25 @@ button:not(.custom-site-btn):hover, button:not(.custom-site-btn):focus,
   align-items: center;
   background-color: #f1f1f1;
   padding: 1rem;
-  margin-right: 2rem;
 }
-.shopping-cart-list .cart-item-wrapper .details-wrapper .qty-fields-wrapper button {
+.shopping-cart-list .cart-item-wrapper .details-wrapper .qty-remove-btns .qty-fields-wrapper button {
   transition: all 0.2s ease-in-out;
   cursor: pointer;
 }
-.shopping-cart-list .cart-item-wrapper .details-wrapper .qty-fields-wrapper button .custom-icon {
+.shopping-cart-list .cart-item-wrapper .details-wrapper .qty-remove-btns .qty-fields-wrapper button .custom-icon {
   transition: all 0.2s ease-in-out;
 }
-.shopping-cart-list .cart-item-wrapper .details-wrapper .qty-fields-wrapper button:hover .custom-icon, .shopping-cart-list .cart-item-wrapper .details-wrapper .qty-fields-wrapper button:focus .custom-icon {
+.shopping-cart-list .cart-item-wrapper .details-wrapper .qty-remove-btns .qty-fields-wrapper button:hover .custom-icon, .shopping-cart-list .cart-item-wrapper .details-wrapper .qty-remove-btns .qty-fields-wrapper button:focus .custom-icon {
   color: #d87d4a;
 }
-.shopping-cart-list .cart-item-wrapper .details-wrapper .qty-fields-wrapper .qty-input {
+.shopping-cart-list .cart-item-wrapper .details-wrapper .qty-remove-btns .qty-fields-wrapper .qty-input {
   border: none;
   background: transparent;
   width: 65px;
   text-align: center;
   font-weight: 700;
 }
-.shopping-cart-list .cart-item-wrapper .details-wrapper .qty-fields-wrapper .qty-input:focus {
+.shopping-cart-list .cart-item-wrapper .details-wrapper .qty-remove-btns .qty-fields-wrapper .qty-input:focus {
   outline: none;
 }
 @media only screen and (max-width: 950px) {
@@ -2070,7 +2080,7 @@ button:not(.custom-site-btn):hover, button:not(.custom-site-btn):focus,
     margin-bottom: 1rem;
   }
   .shopping-cart-list .cart-item-wrapper .details-wrapper .qty-fields-wrapper {
-    margin-right: 0;
+    margin-bottom: 1rem;
   }
 }
 
